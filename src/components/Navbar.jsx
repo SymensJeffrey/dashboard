@@ -11,9 +11,20 @@ import { Cart, Chat, Notification, UserProfile } from '.'
 import { useStateContext } from '../contexts/ContextProvider';
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
-  <TooltipComponent content={title} position="BottonCenter">
-    <button type="button" onClick={customFunc} style={{ color }} className="relative text-xl rounder-full p-3 hover:bg-light-gray">
-      <span style={{ background: dotColor }} className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2">
+  <TooltipComponent
+    content={title}
+    position="BottonCenter"
+  >
+    <button
+      type="button"
+      onClick={customFunc}
+      style={{ color }}
+      className="relative text-xl rounder-full p-3 hover:bg-light-gray"
+    >
+      <span
+        style={{ background: dotColor }}
+        className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"
+      >
         {icon}
       </span>
     </button>

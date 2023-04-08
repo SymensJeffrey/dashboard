@@ -22,11 +22,22 @@ const Sidebar = () => {
     <div className="ml-3 h-screen md:overflow-hidden overflow-auto md:hover:overflow-auto pb-10">
       {activeMenu && (<>
         <div className="flex justify-between items-center">
-          <Link to="/" onClick={handleClosedSideBar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
+          <Link
+            to="/"
+            onClick={handleClosedSideBar}
+            className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
+          >
             <SiShopware /> <span>Shoppy</span>
           </Link>
-          <TooltipComponent content="Menu" position="BottomCenter">
-            <button type="button" onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} className=" text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden">
+          <TooltipComponent
+            content="Menu"
+            position="BottomCenter"
+          >
+            <button
+              type="button"
+              onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+              className=" text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
+            >
               <MdOutlineCancel />
             </button>
           </TooltipComponent>
@@ -38,7 +49,12 @@ const Sidebar = () => {
                 {item.title}
               </p>
               {item.links.map((Link) => (
-                <NavLink to={`/${Link.name}`} key={Link.name} onClick={handleClosedSideBar} className={({ isActive }) => isActive ? activeLink : normalLink}>
+                <NavLink
+                  to={`/${Link.name}`}
+                  key={Link.name}
+                  onClick={handleClosedSideBar}
+                  className={({ isActive }) => isActive ? activeLink : normalLink}
+                >
                   {Link.icon}
                   <span className="capitalzie">
                     {Link.name}
